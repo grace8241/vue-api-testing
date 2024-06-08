@@ -1,40 +1,36 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-// import GraceView from '../views/MyGrace.vue'
-import GraceView from '../views/Apitest1.vue'
-//import JimmyView from '../views/MyJimmy.vue'
-import JimmyView from '../views/MyTable.vue'
+import { createRouter, createWebHistory } from 'vue-router';
+import A from '../views/a.vue';
+import B from '../views/b.vue';
+import C from '../views/c.vue';
+import MyTable from '../views/MyTable.vue';
 
+
+const routes = [
+  {
+    path: '/',
+    name: 'a',
+    component: A
+  },
+  {
+    path: '/b',
+    name: 'b',
+    component: B
+  },
+  {
+    path: '/c',
+    name: 'c',
+    component: C
+  },
+  {
+    path: '/myTable',
+    name: 'MyTable',
+    component: MyTable
+  }
+];
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  routes: [
-    {
-      path: '/',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/grace',
-      name: 'GraceView',
-      component: GraceView
-    },
-    {
-      path: '/jimmy',
-      name: 'JimmyView',
-      component: JimmyView
-    },
+  routes
+});
 
-  
-    {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
-    }
-  ]
-})
-
-export default router
+export default router;
